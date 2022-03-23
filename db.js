@@ -10,9 +10,9 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
     if (err) throw err;
-    var sql = "SELECT users.name AS user, products.name AS favorite FROM users INNER JOIN products ON users.favorite_product = products.id";
+    var sql = "DROP TABLE customers";
     con.query(sql, function (err, result) {
         if (err) throw err;
-        console.log(result);
+        console.log("Table deleted");
     });
 });
